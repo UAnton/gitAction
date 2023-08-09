@@ -15,4 +15,4 @@ jobs:
 
       - name: Run script
         run: |
-          docker run --rm -v $PWD:/workspace -w /workspace ubuntu:latest /bin/bash -c "apt update && apt install -yqq curl && bash script.sh"
+          docker run --rm -v $PWD:/workspace -w /workspace ubuntu:latest /bin/bash -c "bash script.sh"
