@@ -11,8 +11,8 @@ jobs:
 
     steps:
       - name: Check out code
-        uses: actions/checkout@v3
+        uses: actions/checkout@v2
 
       - name: Run script
         run: |
-          docker run --rm -it ubuntu:latest /bin/bash -c "apt update && apt install -yqq curl && bash -s" < script.sh
+          docker run --rm ubuntu:latest /bin/bash -c "apt update && apt install -yqq curl && bash -s" < script.sh
