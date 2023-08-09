@@ -1,0 +1,18 @@
+name: Run Name Script
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  run_script:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check out code
+        uses: actions/checkout@v3
+
+      - name: Run script
+        run: |
+          docker run --rm -it ubuntu:latest /bin/bash -c "apt update && apt install -yqq curl && bash -s" < script.sh
